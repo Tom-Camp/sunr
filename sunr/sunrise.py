@@ -32,6 +32,14 @@ def sunrise():
         time.sleep(delay)
 
 
+def brighten():
+    for d in range(0, 10):
+        br = d * 0.1
+        pixels.brightness = br
+        pixels.show()
+        time.sleep(delay)
+
+
 def stop():
     pixels.fill((0, 0, 0))
     pixels.show()
@@ -39,6 +47,7 @@ def stop():
 
 try:
     sunrise()
+    brighten()
 except KeyboardInterrupt:
     stop()
 
