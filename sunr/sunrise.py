@@ -3,7 +3,7 @@ import time
 import board
 import neopixel
 
-sky_blue = (170, 219, 254)
+sky_blue = (51, 153, 255)
 delay = 2
 brighness = 0.1
 
@@ -33,7 +33,7 @@ def sunrise():
 
 
 def brighten():
-    for d in range(0, 10):
+    for d in range(1, 8):
         br = d * 0.1
         pixels.brightness = br
         pixels.show()
