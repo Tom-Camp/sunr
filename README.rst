@@ -42,7 +42,7 @@ Version
 -------
 
 - 0.1
-  #. Initial release
+  - Initial release
 
 
 License
