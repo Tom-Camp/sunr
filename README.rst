@@ -6,7 +6,7 @@ and a `Raspberry Pi Zero W <https://www.raspberrypi.com/products/raspberry-pi-ze
 
 `Dawn simulation <https://en.wikipedia.org/wiki/Dawn_simulation>`_
 
-.. code-block
+.. code-block:: text
 
     Dawn simulation is a technique that involves timing lights, often called wake up lights, sunrise
     alarm clock or natural light alarm clocks, in the bedroom to come on gradually, over a period of
@@ -42,11 +42,11 @@ Version
 -------
 
 - 0.1
-  - Initial release
+  #. Initial release
 
 
 License
 -------
 
-GNU General Public License v3.0 or later.
-SPDX-License-Identifier: ``GPL-3.0-or-later``
+- GNU General Public License v3.0 or later.
+- SPDX-License-Identifier: ``GPL-3.0-or-later``
