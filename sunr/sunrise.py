@@ -9,7 +9,7 @@ with open("configuration.json", "r") as j:
     config = json.load(j)
 
 color = config.get("color")
-delay = config.delay
+delay = config.get("delay")
 brighness = 0.1
 
 pixels = neopixel.NeoPixel(
@@ -52,7 +52,7 @@ def stop():
 
 while True:
     dow = time.strftime("%U").lower()
-    alarm = config["week"][dow]
+    alarm = config.get("week").get(dow)
     now = datetime.datetime.now()
     start = now.replace(hour=alarm[0], minute=alarm[1], second=0, microsecond=0)
 
