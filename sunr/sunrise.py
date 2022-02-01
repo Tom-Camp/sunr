@@ -8,7 +8,7 @@ import neopixel
 with open("configuration.json", "r") as j:
     config = json.load(j)
 
-sky_blue = (config.colors.r, config.colors.g, config.colors.b)
+color = config.get("color")
 delay = config.delay
 brighness = 0.1
 
@@ -32,7 +32,7 @@ def sunrise():
     """
     for row in up:
         for p in row:
-            pixels[p] = sky_blue
+            pixels[p] = color
         pixels.show()
         time.sleep(delay)
 
