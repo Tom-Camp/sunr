@@ -47,7 +47,7 @@ LEDs are lit. You can set the color and the delay in the configuration file.
 You can create a Systemd service so that the alarm runs on startup by creating
 a service in ``/etc/systemd/service/sunr.service`` with the following information:
 
-.. code-block:: bash
+.. code-block::
    [Unit]
    Description=Sunrise alarm clock.
 
