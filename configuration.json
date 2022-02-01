@@ -1,12 +1,12 @@
 {
     "week": {
-        "monday": [6, 0, 0],
-        "tuesday": [6, 0, 0],
-        "wednesday": [6, 0, 0],
-        "thursday": [6, 0, 0],
-        "friday": [6, 0, 0],
-        "saturday": [6, 30, 0],
-        "sunday": [6, 30, 0]
+        "monday": [6, 0],
+        "tuesday": [6, 0],
+        "wednesday": [6, 0],
+        "thursday": [6, 0],
+        "friday": [6, 0],
+        "saturday": [6, 30],
+        "sunday": [6, 30]
     },
     "color": [51, 153, 255],
     "delay": 30

@@ -51,12 +51,11 @@ def stop():
 
 
 while True:
-    dow = time.strftime("%U").lower()
-    alarm = config.get("week").get(dow)
+    dow = time.strftime("%A").lower()
+    alarm = tuple(config.get("week").get(dow))
     now = datetime.datetime.now()
-    start = now.replace(hour=alarm[0], minute=alarm[1], second=0, microsecond=0)
 
-    if now == start:
+    if now.hour == alarm[0] and now.minute == alarm[1] and now.second == 0:
         try:
             sunrise()
             brighten()
