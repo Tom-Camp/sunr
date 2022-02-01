@@ -1,12 +1,12 @@
 {
     "week": {
-        "monday": "06:00",
-        "tuesday": "06:00",
-        "wednesday": "06:00",
-        "thursday": "06:00",
-        "friday": "06:00",
-        "saturday": "06:30",
-        "sunday": "06:30"
+        "monday": [6, 0, 0],
+        "tuesday": [6, 0, 0],
+        "wednesday": [6, 0, 0],
+        "thursday": [6, 0, 0],
+        "friday": [6, 0, 0],
+        "saturday": [6, 30, 0],
+        "sunday": [6, 30, 0]
     },
     "color": {
         "r": 51,

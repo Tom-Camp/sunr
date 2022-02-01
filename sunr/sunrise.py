@@ -1,3 +1,4 @@
+import datetime
 import json
 import time
 
@@ -50,16 +51,16 @@ def stop():
 
 
 while True:
-    # dow = time.strftime("%U").lower()
-    # start = config["week"][dow]
-    # start_time = time.strptime(f"{start}:00", "%H:%M%S")
-    # today = time.localtime()
+    dow = time.strftime("%U").lower()
+    alarm = config["week"][dow]
+    now = datetime.datetime.now()
+    start = now.replace(hour=alarm[0], minute=alarm[1], second=0, microsecond=0)
 
-    # # if time.struct_time(start_time(today[:3] + alarm_time[3:])) == time.localtime():
-    try:
-        sunrise()
-        brighten()
-    except KeyboardInterrupt:
+    if now == start:
+        try:
+            sunrise()
+            brighten()
+        except KeyboardInterrupt:
+            stop()
+
         stop()
-
-    stop()
