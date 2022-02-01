@@ -1,10 +1,14 @@
+import json
 import time
 
 import board
 import neopixel
 
-sky_blue = (51, 153, 255)
-delay = 2
+with open("configuration.json", "r") as j:
+    config = json.load(j)
+
+sky_blue = (config.colors.r, config.colors.g, config.colors.b)
+delay = config.delay
 brighness = 0.1
 
 pixels = neopixel.NeoPixel(
@@ -45,10 +49,17 @@ def stop():
     pixels.show()
 
 
-try:
-    sunrise()
-    brighten()
-except KeyboardInterrupt:
-    stop()
+while True:
+    # dow = time.strftime("%U").lower()
+    # start = config["week"][dow]
+    # start_time = time.strptime(f"{start}:00", "%H:%M%S")
+    # today = time.localtime()
 
-stop()
+    # # if time.struct_time(start_time(today[:3] + alarm_time[3:])) == time.localtime():
+    try:
+        sunrise()
+        brighten()
+    except KeyboardInterrupt:
+        stop()
+
+    stop()

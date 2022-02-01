@@ -27,8 +27,8 @@ using 24 hour time, for example 0630 for 6:30am.
 
    {
       "week":{
-         "monday": 0600,
-         "tuesday": 0650
+         "monday": "0600",
+         "tuesday": "0650"
       }
    }
 

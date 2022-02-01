@@ -1,0 +1,17 @@
+{
+    "week": {
+        "monday": "06:00",
+        "tuesday": "06:00",
+        "wednesday": "06:00",
+        "thursday": "06:00",
+        "friday": "06:00",
+        "saturday": "06:30",
+        "sunday": "06:30"
+    },
+    "color": {
+        "r": 51,
+        "g": 153,
+        "b": 255
+    },
+    "delay": 30
+}
