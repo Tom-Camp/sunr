@@ -38,6 +38,9 @@ def sunrise():
 
 
 def brighten():
+    """
+    Increase brightness
+    """
     for d in range(1, 8):
         br = d * 0.1
         pixels.brightness = br
@@ -46,6 +49,9 @@ def brighten():
 
 
 def stop():
+    """
+    Clear pixels
+    """
     pixels.fill((0, 0, 0))
     pixels.show()
 
