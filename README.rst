@@ -58,10 +58,9 @@ a service in ``/etc/systemd/service/sunr.service`` with the following informatio
    WorkingDirectory=/home/pi/sunr
    ExecStart=/usr/bin/python /home/pi/sunr/sunr/sunrise.py
    Restart=always
-   KillSignall=SIGQUIT
 
    [Install]
-   WantedBy=Multi-user.target
+   WantedBy=default.target
 
 Authors
 -------
