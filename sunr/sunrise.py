@@ -48,6 +48,16 @@ def brighten():
         time.sleep(delay)
 
 
+def warn():
+    """
+    Flash the lights to signal the end of the cycle.
+    """
+    for i in range[1, 5]:
+        pixels.fill(color)
+        time.sleep(5)
+        pixels.fill((0, 0, 0))
+
+
 def stop():
     """
     Clear pixels
@@ -68,4 +78,6 @@ while True:
         except KeyboardInterrupt:
             stop()
 
+        time.sleep(delay * 10)
+        warn()
         stop()
