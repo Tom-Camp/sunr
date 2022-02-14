@@ -41,7 +41,7 @@ def brighten():
     """
     Increase brightness
     """
-    for d in range(8):
+    for d in range(1, 8):
         br = d * 0.1
         pixels.brightness = br
         pixels.show()
@@ -52,11 +52,13 @@ def warn():
     """
     Flash the lights to signal the end of the cycle.
     """
-    for i in range[1, 5]:
+    for i in range(5):
         pixels.fill(color)
+        pixels.show()
         time.sleep(5)
         pixels.fill((0, 0, 0))
-
+        pixels.show()
+        time.sleep(3)
 
 def stop():
     """
@@ -75,9 +77,9 @@ while True:
         try:
             sunrise()
             brighten()
+            time.sleep(delay * 10)
+            warn()
         except KeyboardInterrupt:
             stop()
 
-        time.sleep(delay * 10)
-        warn()
         stop()
