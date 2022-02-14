@@ -41,7 +41,7 @@ def brighten():
     """
     Increase brightness
     """
-    for d in range(1, 8):
+    for d in range(8):
         br = d * 0.1
         pixels.brightness = br
         pixels.show()
