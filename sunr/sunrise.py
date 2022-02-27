@@ -61,6 +61,7 @@ def warn():
         pixels.show()
         time.sleep(3)
 
+
 def stop():
     """
     Clear pixels
