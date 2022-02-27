@@ -10,7 +10,7 @@ with open("configuration.json", "r") as j:
 
 color = config.get("color")
 delay = config.get("delay")
-brighness = 0.1
+brightness = 0.1
 
 pixels = neopixel.NeoPixel(
     board.D18, 32, brightness=0.1, auto_write=False, pixel_order=neopixel.RGB
@@ -30,6 +30,7 @@ def sunrise():
     """
     Start the sun to risin'
     """
+    pixels.brightness = brightness
     for row in up:
         for p in row:
             pixels[p] = color
