@@ -17,12 +17,8 @@ pixels = neopixel.NeoPixel(
 )
 
 up = [
-    [11, 20],
-    [12, 19],
-    [2, 5, 26, 29],
-    [3, 4, 10, 13, 18, 21, 27, 28],
-    [1, 6, 9, 14, 17, 22, 25, 30],
-    [0, 7, 8, 15, 16, 23, 24, 31],
+    [11, 20, 12, 19, 2, 5, 26, 29, 3, 4, 10, 13, 18, 21, 27, 28,
+     1, 6, 9, 14, 17, 22, 25, 30, 0, 7, 8, 15, 16, 23, 24, 31],
 ]
 
 
@@ -31,9 +27,8 @@ def sunrise():
     Start the sun to risin'
     """
     pixels.brightness = brightness
-    for row in up:
-        for p in row:
-            pixels[p] = color
+    for p in up:
+        pixels[p] = color
         pixels.show()
         time.sleep(delay)
 
@@ -47,19 +42,6 @@ def brighten():
         pixels.brightness = br
         pixels.show()
         time.sleep(delay)
-
-
-def warn():
-    """
-    Flash the lights to signal the end of the cycle.
-    """
-    for i in range(5):
-        pixels.fill(color)
-        pixels.show()
-        time.sleep(5)
-        pixels.fill((0, 0, 0))
-        pixels.show()
-        time.sleep(3)
 
 
 def stop():
@@ -80,7 +62,6 @@ while True:
             sunrise()
             brighten()
             time.sleep(delay * 10)
-            warn()
         except KeyboardInterrupt:
             stop()
 
