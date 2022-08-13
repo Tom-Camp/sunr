@@ -1,9 +1,12 @@
 import datetime
 import json
+import logging
 import time
 
 import board
 import neopixel
+
+logging.basicConfig(filename="sunr.log", filemode="w", level=logging.DEBUG)
 
 with open("configuration.json", "r") as j:
     config = json.load(j)
@@ -16,10 +19,8 @@ pixels = neopixel.NeoPixel(
     board.D18, 32, brightness=0.1, auto_write=False, pixel_order=neopixel.RGB
 )
 
-up = [
-    [11, 20, 12, 19, 2, 5, 26, 29, 3, 4, 10, 13, 18, 21, 27, 28,
-     1, 6, 9, 14, 17, 22, 25, 30, 0, 7, 8, 15, 16, 23, 24, 31],
-]
+up = [11, 20, 12, 19, 2, 5, 26, 29, 3, 4, 10, 13, 18, 21, 27, 28,
+      1, 6, 9, 14, 17, 22, 25, 30, 0, 7, 8, 15, 16, 23, 24, 31]
 
 
 def sunrise():
@@ -29,8 +30,11 @@ def sunrise():
     pixels.brightness = brightness
     for p in up:
         pixels[p] = color
-        pixels.show()
-        time.sleep(delay)
+        try:
+            pixels.show()
+            time.sleep(delay)
+        except ValueError as e:
+            logging.debug(f"An error occurred during sunrise: {e}")
 
 
 def brighten():
@@ -39,9 +43,13 @@ def brighten():
     """
     for d in range(1, 8):
         br = d * 0.1
-        pixels.brightness = br
-        pixels.show()
-        time.sleep(delay)
+
+        try:
+            pixels.brightness = br
+            pixels.show()
+            time.sleep(delay)
+        except ValueError as e:
+            logging.debug(f"An error occurred during brighten: {e}")
 
 
 def stop():
